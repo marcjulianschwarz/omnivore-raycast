@@ -1,0 +1,74 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "omnivore",
+  "title": "Omnivore",
+  "description": "Control your Omnivore library everywhere on your Mac.",
+  "icon": "command-icon.png",
+  "author": "marcjulian",
+  "categories": [
+    "Productivity",
+    "Applications"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "searchArticlesCommand",
+      "title": "Search all Articles",
+      "description": "Show all articles in your Omnivore library.",
+      "mode": "view",
+      "preferences": [
+        {
+          "title": "Use Grid View",
+          "label": "Use Grid View",
+          "name": "useGridView",
+          "description": "Use grid view instead of list view.",
+          "type": "checkbox",
+          "defaultValue": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "addArticle",
+      "title": "Add Article",
+      "description": "Add an article to your Omnivore library.",
+      "mode": "view"
+    },
+    {
+      "name": "openOmnivoreCommand",
+      "title": "Open Omnivore",
+      "description": "Opens Omnivore in the browser.",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "title": "Omnivore API Key",
+      "name": "omnivoreApiKey",
+      "description": "Your Omnivore API key.",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "API Key"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.57.0",
+    "@raycast/utils": "^1.9.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "1.0.5",
+    "@types/node": "18.8.3",
+    "@types/react": "18.0.9",
+    "eslint": "^7.32.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
